@@ -42,7 +42,14 @@ public class MySqlConnector {
             System.out.println(e);
         }
     }
-    public ResultSet command (String command) {
+    public void create (String command) {
+        try{
+            _stmt.executeUpdate(command);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    public ResultSet select (String command) {
         try {
             _rs = _stmt.executeQuery(command);
         } catch (Exception e) {

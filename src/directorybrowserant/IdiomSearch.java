@@ -22,7 +22,7 @@ public class IdiomSearch {
     public String extract(String table, String id) {
         ResultSet result;
         String resultText = "¡ERROR!";
-        result = _con.command("SELECT textOfProgram FROM " + table + " WHERE id LIKE '" + id + "';");
+        result = _con.select("SELECT textOfProgram FROM " + table + " WHERE id LIKE '" + id + "';");
         try {
             result.next();
             resultText = result.getString(1);
@@ -36,9 +36,9 @@ public class IdiomSearch {
         ResultSet result;
         String resultText = "¡ERROR!";
         if (table.equals("espField") || table.equals("engField")){
-            result = _con.command("SELECT textOfProgram FROM " + table + " WHERE id LIKE '" + id +"' AND commandId LIKE '"+superId+"';");
+            result = _con.select("SELECT textOfProgram FROM " + table + " WHERE id LIKE '" + id +"' AND commandId LIKE '"+superId+"';");
         } else if (table.equals("espSubfield") || table.equals("engSubfield")){
-            result = _con.command("SELECT textOfProgram FROM " + table + " WHERE id LIKE '" + id +"' AND fieldId LIKE '"+superId+"';");
+            result = _con.select("SELECT textOfProgram FROM " + table + " WHERE id LIKE '" + id +"' AND fieldId LIKE '"+superId+"';");
         } else {
             result = null;
         }

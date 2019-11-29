@@ -8,14 +8,22 @@ package directorybrowserant;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.sql.ResultSet;
 /**
  *
  * @author Juanjo
  */
 public class WriteLog {
+    private MySqlConnector _con;
     private String _path;
     private boolean _appendToFile = false;
     
+    public WriteLog(){
+        _con = new MySqlConnector("jdbc:mysql://localhost:3306/directoryBrowser", "root", "admin");
+    }
+    public void saveLog(String fecha, String comando){
+        _con.create("INSERT INTO log (fecha, comando) VALUES('"+fecha+"','"+comando+"');");
+    }
     public WriteLog(String filePath){
         _path = filePath;
     }

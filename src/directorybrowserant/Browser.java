@@ -53,6 +53,7 @@ public class Browser {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             Scanner sc = new Scanner(System.in);
             WriteLog log = new WriteLog("log.txt", true);
+            WriteLog saveLog = new WriteLog();
             String[] entries;
             String entryText = "";
             final String dir = System.getProperty("user.dir");
@@ -73,6 +74,8 @@ public class Browser {
                 entryText = sc.nextLine();
                 try {
                     log.writeToLog(" " + entryText);
+                    saveLog.saveLog(dtf.format(LocalDateTime.now()), entryText);
+                    
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
