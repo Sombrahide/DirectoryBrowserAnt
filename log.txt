@@ -265,3 +265,39 @@
 ===================
 
 
+2019/12/08 17:21:22
+===================
+ HELP
+ list
+ help goto
+ help
+ changeidiom esp
+ help changeidiom
+ changeidiom ESP
+ exit
+
+===================
+
+
+2019/12/10 16:56:11
+===================
+ help goto
+ exit
+
+===================
+
+
+2019/12/10 16:57:23
+===================
+ help goto
+ changeidiom esp
+ changeidiom
+2019/12/10 16:58:12
+===================
+ changeidiom esp
+ help goto
+ exit
+
+===================
+
+

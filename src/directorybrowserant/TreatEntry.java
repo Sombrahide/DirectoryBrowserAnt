@@ -196,10 +196,10 @@ public class TreatEntry {
                     }
                     break;
                 case "changeidiom":
-                    if (elements.length == 1){
+                    if (elements.length == 2){
                         this._entryType = EntryType.CHANGEIDIOM;
                         this._parameters = new String[elements.length - 1];
-                        this._parameters[0] = elements[1];}
+                        this._parameters[0] = elements[1].toLowerCase();}
                     else {
                         this._entryType = EntryType.ERROR;
                         this._error = "Incorrect number of parameters";
